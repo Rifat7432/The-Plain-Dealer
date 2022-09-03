@@ -125,7 +125,6 @@ const displayNewsModal =(data) =>{
   <div class="card";">
   <img src="${image_url}" class="card-img-top" alt="...">
   <div class="card-body">
-    
     <p class="card-text">${details === null ? 'no information' : details}</p>
     <img class="card-img rounded-circle me-3" style="height:60px; width:60px;" src="${img}" alt="">
     <p class="card-text">Author name : ${name === null ? 'no information' : name}</p>
@@ -136,7 +135,6 @@ const displayNewsModal =(data) =>{
 </div>
   `;
  loading(false)
-
 }
 const selectList = () => parseInt(document.getElementById('sort-news').value);
 const blog = () => window.location.href = "question.html" ;
