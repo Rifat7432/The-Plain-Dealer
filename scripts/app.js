@@ -19,7 +19,7 @@ const displayCategory = (data) =>{
     data.forEach(category => {
     const div = document.createElement('div')
     div.innerHTML =`
-    <button type="button" class="btn btn-light me-2 p-2" onclick="loadNews('${category.category_id}')">${category.category_name}</button>
+    <button type="button" class="btn btn-light  me-2 p-3" onclick="loadNews('${category.category_id}')">${category.category_name}</button>
     `;
     categories.appendChild(div)
   });
