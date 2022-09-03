@@ -106,9 +106,9 @@ const displayNews = (newses) => {
  });
  loading(false)
 }
-const newsModal = async(news_id) => {
+const newsModal = async(newsId) => {
    loading(true);
-   const newsUrl =`https://openapi.programming-hero.com/api/news/${news_id}`;
+   const newsUrl =`https://openapi.programming-hero.com/api/news/${newsId}`;
    const res = await fetch(newsUrl)
    const data = await res.json();
    displayNewsModal(data.data[0])
