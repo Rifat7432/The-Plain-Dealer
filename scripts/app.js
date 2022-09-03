@@ -25,13 +25,13 @@ const displayCategory = (data) =>{
   });
   loading(false)
 }
-const loadNews = async(category_id)=>{
+const loadNews = async(categoryId)=>{
     const newsContainer = document.getElementById('news-container')
     newsContainer.textContent ='';
     loading(true)
     const sortContainer = document.getElementById('sort-container');
     sortContainer.classList.remove('d-none')
-    const newsCategoriesURL = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
+    const newsCategoriesURL = `https://openapi.programming-hero.com/api/news/category/${categoryId}`;
     const res = await fetch(newsCategoriesURL)
     const data = await res.json();
     displayNews(data.data)
