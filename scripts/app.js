@@ -139,15 +139,4 @@ const displayNewsModal = (data) =>{
 const selectList = () => parseInt(document.getElementById('sort-news').value);
 const blog = () => window.location.href = "question.html" ;
 const news = () => window.location.href = "index.html" ;
-loadCategories()
-
-
-
-     
-     
-
-     
-     
-     
-     
-      
+loadCategories()  

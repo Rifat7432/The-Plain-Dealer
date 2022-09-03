@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- bootstrap link -->
-    <link rel="stylesheet" href=".//bootstrap-conection/bootstrap.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href=".//bootstrap-conection/bootstrap.min.css" />
+  </head>
+  <body>
     <header class="border-bottom">
-        <nav class="navbar navbar-expand-lg bg-light">
-          <div class="container-fluid">
-            <a class="navbar-brand ms-3" href="#">The Plain Dealer</a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto me-2 mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active text-primary text-decoration-underline" aria-current="page" onclick="news()" href="#">News</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" onclick="blog()" href="#">Blog</a>
-                </li>
-              </ul>
-            </div>
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-3" href="#">The Plain Dealer</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto me-2 mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-primary text-decoration-underline"
+                  aria-current="page"
+                  onclick="news()"
+                  href="#"
+                  >News</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="blog()" href="#">Blog</a>
+              </li>
+            </ul>
           </div>
-        </nav>
-      </header>
+        </div>
+      </nav>
+    </header>
     <main>
       <section>
         <div class="container mt-5">
@@ -44,8 +50,8 @@
             <div
               class="col d-flex flex-column align-items-center justify-content-center text-center"
             >
-              <h1> Questions</h1>
-             
+              <h1>Questions</h1>
+
               <div class="mt-5 w-100">
                 <div class="accordion" id="accordionPanelsStayOpenExample">
                   <div class="accordion-item">
@@ -58,7 +64,7 @@
                         aria-expanded="true"
                         aria-controls="panelsStayOpen-collapseOne"
                       >
-                      What is the difference between LET , VAR and CONST?
+                        What is the difference between LET , VAR and CONST?
                       </button>
                     </h2>
                     <div
@@ -68,7 +74,21 @@
                     >
                       <div class="accordion-body">
                         <p>
-                          et is block-scoped. var is function scoped. let does not allow to redeclare variables. var allows to redeclare variables.`const` is a signal that the identifier won't be reassigned. `let` is a signal that the variable may be reassigned, such as a counter in a loop, or a value swap in an algorithm. It also signals that the variable will be used only in the block it's defined in, which is not always the entire containing function.var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared. They are all hoisted to the top of their scope. But while var variables are initialized with undefined , let and const variables are not initialized
+                          et is block-scoped. var is function scoped. let does
+                          not allow to redeclare variables. var allows to
+                          redeclare variables.`const` is a signal that the
+                          identifier won't be reassigned. `let` is a signal that
+                          the variable may be reassigned, such as a counter in a
+                          loop, or a value swap in an algorithm. It also signals
+                          that the variable will be used only in the block it's
+                          defined in, which is not always the entire containing
+                          function.var variables can be updated and re-declared
+                          within its scope; let variables can be updated but not
+                          re-declared; const variables can neither be updated
+                          nor re-declared. They are all hoisted to the top of
+                          their scope. But while var variables are initialized
+                          with undefined , let and const variables are not
+                          initialized
                         </p>
                       </div>
                     </div>
@@ -83,7 +103,8 @@
                         aria-expanded="false"
                         aria-controls="panelsStayOpen-collapseTwo"
                       >
-                        what is the defarence between regular functions and arrow functions ?
+                        what is the defarence between regular functions and
+                        arrow functions ?
                       </button>
                     </h2>
                     <div
@@ -93,7 +114,11 @@
                     >
                       <div class="accordion-body">
                         <p>
-                          Unlike regular functions, arrow functions do not have their own this . The value of this inside an arrow function remains the same throughout the lifecycle of the function and is always bound to the value of this in the closest non-arrow parent function
+                          Unlike regular functions, arrow functions do not have
+                          their own this . The value of this inside an arrow
+                          function remains the same throughout the lifecycle of
+                          the function and is always bound to the value of this
+                          in the closest non-arrow parent function
                         </p>
                       </div>
                     </div>
@@ -111,7 +136,8 @@
                         aria-expanded="false"
                         aria-controls="panelsStayOpen-collapseThree"
                       >
-                      what is the difference between map foreach filter and find ?
+                        what is the difference between map foreach filter and
+                        find ?
                       </button>
                     </h2>
                     <div
@@ -121,7 +147,21 @@
                     >
                       <div class="accordion-body">
                         <p>
-                          The forEach() method does not create a new array based on the given array. The map() method creates an entirely new array. The forEach() method returns “undefined“. The map() method returns the newly created array according to the provided callback.The main difference between this two methods is that forEach allows you to change elements of original array and returns undefined and map does not allow you to change original array and intended for making new array based on original one function.The filter() method is used to filters all the elements and returns the element that matches and the element that do not match are removed. The only difference is the filter() method search through all the elements while find() method search through all the child elements only
+                          The forEach() method does not create a new array based
+                          on the given array. The map() method creates an
+                          entirely new array. The forEach() method returns
+                          “undefined“. The map() method returns the newly
+                          created array according to the provided callback.The
+                          main difference between this two methods is that
+                          forEach allows you to change elements of original
+                          array and returns undefined and map does not allow you
+                          to change original array and intended for making new
+                          array based on original one function.The filter()
+                          method is used to filters all the elements and returns
+                          the element that matches and the element that do not
+                          match are removed. The only difference is the filter()
+                          method search through all the elements while find()
+                          method search through all the child elements only
                         </p>
                       </div>
                     </div>
@@ -139,7 +179,7 @@
                         aria-expanded="false"
                         aria-controls="panelsStayOpen-collapseFour"
                       >
-                      What are template strings used for?
+                        What are template strings used for?
                       </button>
                     </h2>
                     <div
@@ -149,7 +189,10 @@
                     >
                       <div class="accordion-body">
                         <p>
-                          Template literals (template strings) allow you to use strings or embedded expressions in the form of a string. They are enclosed in backticks `` . For example, const name = 'Jack'; console
+                          Template literals (template strings) allow you to use
+                          strings or embedded expressions in the form of a
+                          string. They are enclosed in backticks `` . For
+                          example, const name = 'Jack'; console
                         </p>
                       </div>
                     </div>
@@ -164,5 +207,5 @@
     <!-- scripts -->
     <script src=".//bootstrap-conection/bootstrap.min.js"></script>
     <script src=".//scripts/question.js"></script>
-</body>
+  </body>
 </html>
