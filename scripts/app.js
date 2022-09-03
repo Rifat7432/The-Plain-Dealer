@@ -8,11 +8,16 @@ const loading = (isLoading) => {
   }
 }
 const loadCategories = async() =>{
+  try{
     loading(true)
     const url = `https://openapi.programming-hero.com/api/news/categories`;
     const res = await fetch(url)
     const data = await res.json();
-    displayCategory(data.data.news_category)
+    displayCategory(data.data.news_category);
+  }
+  catch(error){
+    console.error(error);
+  }
 }
 const displayCategory = (data) =>{
     const categories = document.getElementById('categories');
@@ -26,7 +31,7 @@ const displayCategory = (data) =>{
   loading(false)
 }
 const loadNews = async(categoryId)=>{
-    const newsContainer = document.getElementById('news-container')
+   try{ const newsContainer = document.getElementById('news-container')
     newsContainer.textContent ='';
     loading(true)
     const sortContainer = document.getElementById('sort-container');
@@ -35,23 +40,23 @@ const loadNews = async(categoryId)=>{
     const res = await fetch(newsCategoriesURL)
     const data = await res.json();
     displayNews(data.data)
+  }
+  catch(error){
+    console.error(error)
+  }
 }
 const displayNews = (newses) => {
-    const defaultSort = newses
     const numberOfNews = newses.length
     const span = document.getElementById('number');
     span.innerText = numberOfNews;
     const newsContainer = document.getElementById('news-container')
     newsContainer.textContent ='';
     const sortValue = selectList();
-    if(sortValue === 3){
-      newses.sort((a,b) => a.total_view-b.total_view);
-    }
-    else if(sortValue === 2){
-     newses.sort((a,b) => a.total_view-b.total_view).reverse();
+   if(sortValue === 2){
+     newses.sort((a,b) => a.total_view-b.total_view);
     }
    else{
-     newses = defaultSort
+    newses.sort((a,b) => a.total_view-b.total_view).reverse();
     }
     newses.forEach(news => {
     const {title,details,author,thumbnail_url,total_view,_id} = news;
@@ -104,14 +109,19 @@ const displayNews = (newses) => {
     `;
     newsContainer.appendChild(newsCard)
  });
- loading(false)
+ loading(false);
+
 }
 const newsModal = async(newsId) => {
-   loading(true);
+  try{loading(true);
    const newsUrl =`https://openapi.programming-hero.com/api/news/${newsId}`;
    const res = await fetch(newsUrl)
    const data = await res.json();
    displayNewsModal(data.data[0])
+  }
+  catch(error){
+    console.error(error)
+  }
 }
 const displayNewsModal = (news) =>{
   const {title,image_url,details,author,total_view,rating} = news;
