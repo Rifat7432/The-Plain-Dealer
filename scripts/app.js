@@ -114,7 +114,6 @@ const newsModal = async(news_id) => {
    displayNewsModal(data.data[0])
 }
 const displayNewsModal = (data) =>{
-  console.log(data);
   const {title,image_url,details,author,total_view,rating} = data;
   const {name,published_date,img} = author;
   const {number} = rating;
