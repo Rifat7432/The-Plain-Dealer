@@ -113,8 +113,8 @@ const newsModal = async(newsId) => {
    const data = await res.json();
    displayNewsModal(data.data[0])
 }
-const displayNewsModal = (data) =>{
-  const {title,image_url,details,author,total_view,rating} = data;
+const displayNewsModal = (news) =>{
+  const {title,image_url,details,author,total_view,rating} = news;
   const {name,published_date,img} = author;
   const {number} = rating;
   const modalTitle = document.getElementById('exampleModalLabel');
