@@ -15,8 +15,8 @@ const loadCategories = async() =>{
     displayCategory(data.data.news_category)
 }
 const displayCategory = (data) =>{
-  const categories = document.getElementById('categories');
-  data.forEach(category => {
+    const categories = document.getElementById('categories');
+    data.forEach(category => {
     const div = document.createElement('div')
     div.innerHTML =`
     <button type="button" class="btn btn-light me-2 p-2" onclick="loadNews('${category.category_id}')">${category.category_name}</button>
@@ -26,8 +26,8 @@ const displayCategory = (data) =>{
   loading(false)
 }
 const loadNews = async(category_id)=>{
-  const newsContainer = document.getElementById('news-container')
-  newsContainer.textContent ='';
+    const newsContainer = document.getElementById('news-container')
+    newsContainer.textContent ='';
     loading(true)
     const sortContainer = document.getElementById('sort-container');
     sortContainer.classList.remove('d-none')
@@ -39,21 +39,21 @@ const loadNews = async(category_id)=>{
 const displayNews = (newses) => {
     const defaultSort = newses
     const numberOfNews = newses.length
- const span = document.getElementById('number');
- span.innerText = numberOfNews;
- const newsContainer = document.getElementById('news-container')
- newsContainer.textContent ='';
-const sortValue = selectList();
-if(sortValue === 3){
- newses.sort((a,b) => a.total_view-b.total_view);
-}
-else if(sortValue === 2){
- newses.sort((a,b) => a.total_view-b.total_view).reverse();
-}
-else{
-  newses = defaultSort
-}
- newses.forEach(news => {
+    const span = document.getElementById('number');
+    span.innerText = numberOfNews;
+    const newsContainer = document.getElementById('news-container')
+    newsContainer.textContent ='';
+    const sortValue = selectList();
+    if(sortValue === 3){
+      newses.sort((a,b) => a.total_view-b.total_view);
+    }
+    else if(sortValue === 2){
+     newses.sort((a,b) => a.total_view-b.total_view).reverse();
+    }
+   else{
+     newses = defaultSort
+    }
+    newses.forEach(news => {
     const {title,details,author,thumbnail_url,total_view,_id} = news;
     const detailsArray = details.split(' ');
     const detailFirstArray = detailsArray.splice(0,35);
@@ -106,21 +106,21 @@ else{
  });
  loading(false)
 }
-const newsModal = async(news_id)=>{
- loading(true);
- const newsUrl =`https://openapi.programming-hero.com/api/news/${news_id}`;
- const res = await fetch(newsUrl)
-    const data = await res.json();
-    displayNewsModal(data.data[0])
+const newsModal = async(news_id) => {
+   loading(true);
+   const newsUrl =`https://openapi.programming-hero.com/api/news/${news_id}`;
+   const res = await fetch(newsUrl)
+   const data = await res.json();
+   displayNewsModal(data.data[0])
 }
-const displayNewsModal =(data) =>{
+const displayNewsModal = (data) =>{
   console.log(data);
   const {title,image_url,details,author,total_view,rating} = data;
   const {name,published_date,img} = author;
   const {number} = rating;
   const modalTitle = document.getElementById('exampleModalLabel');
   modalTitle.innerText = title === null ? 'no information' : title;
-  const modalBody =document.getElementById('modal-body')
+  const modalBody =document.getElementById('modal-body');
   modalBody.innerHTML=`
   <div class="card";">
   <img src="${image_url}" class="card-img-top" alt="...">
@@ -132,9 +132,9 @@ const displayNewsModal =(data) =>{
     <p class="card-text">views : ${total_view === null ? 'no information' : total_view +''+'M'}</p>
     <p class="card-text">Rating : ${number === null ? 0 : number} <i class="fa-regular fa-star"></i></p>
   </div>
-</div>
+  </div>
   `;
- loading(false)
+   loading(false)
 }
 const selectList = () => parseInt(document.getElementById('sort-news').value);
 const blog = () => window.location.href = "question.html" ;
